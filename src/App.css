@@ -164,3 +164,10 @@ button.clicked {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+@media (max-width: 350px) {
+  button {
+    height: 4rem;
+    width: 4rem;
+  }
+}
