@@ -9,6 +9,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8rem;
 }
+
 button,
 input {
   color: inherit;
@@ -64,12 +65,26 @@ button {
   border-radius: 100%;
   box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
 }
-button:hover,
-button.active {
+.filter button.active {
   background: #eef0f4;
   border-radius: 100%;
   box-shadow: inset 9.91px 9.91px 15px #d9dade,
     inset -9.91px -9.91px 15px #ffffff;
+}
+button.clicked {
+  background: #eef0f4;
+  border-radius: 100%;
+  box-shadow: inset 9.91px 9.91px 15px #d9dade,
+    inset -9.91px -9.91px 15px #ffffff;
+}
+
+@media (hover: hover) {
+  button:hover {
+    background: #eef0f4;
+    border-radius: 100%;
+    box-shadow: inset 9.91px 9.91px 15px #d9dade,
+      inset -9.91px -9.91px 15px #ffffff;
+  }
 }
 .header .task-options {
   display: flex;
@@ -131,6 +146,9 @@ button.active {
 @media (max-width: 500px) {
   .header {
     flex-direction: column;
+  }
+  .header,
+  .todolist {
     padding-left: 0;
     padding-right: 0;
   }

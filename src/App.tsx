@@ -10,7 +10,8 @@ const App: FC = () => {
   //single taks
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<string>(today);
-
+  //animation of clicking button on touch screens
+  const [duringClick, setduringClick] = useState<boolean>(false);
   //list of tasks
   const [todoList, setTodoList] = useState<ITask[]>([]);
   //filtering
@@ -37,8 +38,12 @@ const App: FC = () => {
       done: false,
     };
     setTodoList([...todoList, newTask]);
+    //cleanup the state of a  new task
     setTask("");
     setDeadline(today);
+    //animation of clicking button on touch screens
+    setduringClick(true);
+    setTimeout(() => setduringClick(false), 300);
   };
 
   const completeTask = (taskId: number): void => {
@@ -49,7 +54,6 @@ const App: FC = () => {
   const deleteTask = (taskId: number): void => {
     const newList = todoList.filter((task) => task.taskId !== taskId);
     setTodoList(newList);
-    // filterTasks()
   };
 
   const filterTasks = useCallback((): void => {
@@ -88,7 +92,9 @@ const App: FC = () => {
             value={deadline}
             className="deadline-input"
           />
-          <button onClick={addTask}>Add task</button>
+          <button onClick={addTask} className={duringClick ? "clicked" : ""}>
+            Add task
+          </button>
         </div>
       </div>
       <Filter setFilter={setFilter} filter={filter} />
