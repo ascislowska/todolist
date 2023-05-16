@@ -1,5 +1,4 @@
 import React from "react";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 import Task from "./Task";
 import { ITask } from "../Interfaces";
@@ -23,22 +22,18 @@ const TodoList = ({ filter, todoList, setTodoList }: TodoListProps) => {
     }
   });
   return (
-    <DragDropContext>
-      <Droppable droppableId="list">
-        <div className="todolist">
-          {filteredList.length > 0 &&
-            filteredList.map((task, index) => (
-              <Task
-                key={task.taskId}
-                task={task}
-                index={index}
-                todoList={todoList}
-                setTodoList={setTodoList}
-              />
-            ))}
-        </div>
-      </Droppable>
-    </DragDropContext>
+    <div className="todolist">
+      {filteredList.length > 0 &&
+        filteredList.map((task, index) => (
+          <Task
+            key={task.taskId}
+            task={task}
+            index={index}
+            todoList={todoList}
+            setTodoList={setTodoList}
+          />
+        ))}
+    </div>
   );
 };
 
