@@ -1,0 +1,62 @@
+@use "resets";
+@use 'consts';
+@use 'btns';
+@use 'header';
+@use 'filter';
+@use "todolist";
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0%;
+  padding: 0%;
+  background-color: #eef0f4;
+  color: #77787a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+// button,
+// input {
+//   color: inherit;
+//   font-family: inherit;
+//   font-size: inherit;
+//   font-weight: inherit;
+// }
+
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  /*to avoid horizontal scroll after vertical scrollbar appear: */
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+
+
+
+
+// @media (max-width: 500px) {
+//   .header {
+//     flex-direction: column;
+//   }
+//   .header,
+//   .todolist {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+//   .header input.task-input {
+//     width: 100%;
+//   }
+//   .header .task-options {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   .todolist {
+//     grid-template-columns: repeat(1, 1fr);
+//   }
+// }

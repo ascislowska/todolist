@@ -1,6 +1,6 @@
 export interface ITask {
   taskName: string;
-  taskDeadline: string;
+  deadline?: string | null;
   done: boolean;
   taskId: number;
 }

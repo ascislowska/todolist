@@ -1,0 +1,42 @@
+button {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  border-radius: 100%;
+  padding-left: 10px;
+  background: linear-gradient(145deg, #ffffff, #c1c3c6);
+  border-radius: 100%;
+  box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
+  font-weight: 800;
+ &.active {
+  background: #eef0f4;
+  border-radius: 100%;
+  box-shadow: inset 9.91px 9.91px 15px #d9dade,
+    inset -9.91px -9.91px 15px #ffffff;
+}
+&.clicked {
+  background: #eef0f4;
+  border-radius: 100%;
+  box-shadow: inset 9.91px 9.91px 15px #d9dade,
+    inset -9.91px -9.91px 15px #ffffff;
+} 
+&.disabled {
+  @extend.active;
+    color: rgb(140, 140, 140);
+  background: #d6d8db;
+  &:hover{
+    cursor: not-allowed;
+  }
+}
+}
+
+
+@media (hover: hover) {
+  button:not(.disabled):hover {
+    background: #eef0f4;
+    border-radius: 100%;
+    box-shadow: inset 9.91px 9.91px 15px #d9dade,
+      inset -9.91px -9.91px 15px #ffffff;
+      cursor: pointer
+  }
+}

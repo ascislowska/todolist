@@ -1,19 +1,27 @@
-interface Props {
-  setFilter(filter: string): void;
-  filter: string;
+import React from "react";
+import { filters } from "../consts/filters";
+import { playSound } from "../utils/playSound";
+interface FilterProps {
+  activeFilter: string;
+  setActiveFilter: (value: string) => void;
 }
-const Filter = ({ setFilter, filter }: Props) => {
-  const values = ["to do", "done", "all"];
+const Filter = ({ activeFilter, setActiveFilter }: FilterProps) => {
+  const toggleFilter = (value: string) => {
+    setActiveFilter(value);
+    playSound("positive");
+  };
   return (
     <div className="filter">
-      {values.map((value) => {
+      {filters.map((filter) => {
+        const { value, name } = filter;
         return (
           <button
-            key={value}
-            onClick={() => setFilter(value)}
-            className={value === filter ? "active" : ""}
+            key={name}
+            value={value}
+            onClick={() => toggleFilter(value)}
+            className={value === activeFilter ? "active" : undefined}
           >
-            {value}
+            {name}
           </button>
         );
       })}
