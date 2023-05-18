@@ -6,17 +6,17 @@
 
 This is a personal project developed for learning purposes. Simple todo app with options to add tasks, create a deadline, remove them, check as done and filter by status (to do, done and all).
 
-## Technologies used
+## Technologies used with my highlights
 
 - Typescript
   - primitives
-  - [Named link](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Interfaces.ts#LL7C1-L8C46 "union types")
-  - [Named link](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Components/TodoList.tsx#LL6C8-L6C8 "types of react props")
-  - [Named link](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Components/Add.tsx#LL7C25-L7C26 "types of react state")
+  - [union types](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Interfaces.ts#LL7C1-L8C46 "union types")
+  - [types of react props](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Components/TodoList.tsx#LL6C8-L6C8 "types of react props")
+  - [types of react state](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Components/Add.tsx#LL7C25-L7C26 "types of react state")
 - React
 - SCSS
-  - [Named link](./styles/_consts "mixins for media queries")
-  - [Named link](./styles/_consts "neumorphic shadows")
+  - [mixins for media queries](./styles/_consts "mixins for media queries")
+  - [neumorphic shadows](./styles/_consts "neumorphic shadows")
 
 ## Available Scripts
 
