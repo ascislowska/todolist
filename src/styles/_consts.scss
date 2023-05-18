@@ -1,5 +1,15 @@
 $btn-background: #eef0f4;
-
+/** Shadows **/
+$shadow: 9.91px 9.91px 15px #d9dade;
+$negative-shadow: -9.91px -9.91px 15px #ffffff;
+@mixin pressed {
+      box-shadow: inset $shadow,
+    inset $negative-shadow;
+}
+@mixin not-pressed {
+      box-shadow:  $shadow,
+     $negative-shadow;
+}
 /** Breakpoints**/
 
 // Small tablets and large smartphones (landscape view)

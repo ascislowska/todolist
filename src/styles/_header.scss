@@ -20,7 +20,7 @@
      font-family: inherit;
      background: #eef0f4;
      border-radius: 15px;
-     box-shadow: inset 9px 9px 13px #d9dade, inset -9px -9px 13px #ffffff;
+     @include consts.pressed;
      &.task-input {
        min-width: 300px;
        flex-grow: 6;

@@ -10,13 +10,13 @@ This is a personal project developed for learning purposes. Simple todo app with
 
 - Typescript
   - primitives
-  - union types
-  - types of react props
-  - types of react state
+  - [Named link](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Interfaces.ts#LL7C1-L8C46 "union types")
+  - [Named link](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Components/TodoList.tsx#LL6C8-L6C8 "types of react props")
+  - [Named link](https://github.com/ascislowska/todolist/blob/9d53ee68cf5dac25efb5c96734f931e5cca5c089/src/Components/Add.tsx#LL7C25-L7C26 "types of react state")
 - React
 - SCSS
-- mixins for media queries
-- neumorphic shadows
+  - [Named link](./styles/_consts "mixins for media queries")
+  - [Named link](./styles/_consts "neumorphic shadows")
 
 ## Available Scripts
 

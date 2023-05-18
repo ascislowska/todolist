@@ -1,9 +1,9 @@
 import React from "react";
 
 import Task from "./Task";
-import { ITask } from "../Interfaces";
+import { Filters, ITask } from "../Interfaces";
 interface TodoListProps {
-  filter: string;
+  filter: Filters;
   todoList: ITask[];
   setTodoList: React.Dispatch<React.SetStateAction<ITask[]>>;
 }

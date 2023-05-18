@@ -16,7 +16,8 @@
 .task {
   background: #eef0f4;
   border-radius: 15px;
-  box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
+  @include consts.not-pressed;
+  // box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
