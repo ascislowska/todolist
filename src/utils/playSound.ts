@@ -1,7 +1,7 @@
 import positive from "../assets/sounds/positive-sound.wav";
 import negative from "../assets/sounds/negative-sound.wav";
-
-type playSound = (type: "positive" | "negative") => void;
+import { Sounds } from "../Interfaces";
+type playSound = (type: Sounds) => void;
 
 export const playSound: playSound = (type) => {
   let soundToPlay = positive;

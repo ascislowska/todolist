@@ -1,12 +1,13 @@
 import React from "react";
 import { filters } from "../consts/filters";
 import { playSound } from "../utils/playSound";
+import { Filters } from "../Interfaces";
 interface FilterProps {
-  activeFilter: string;
-  setActiveFilter: (value: string) => void;
+  activeFilter: Filters;
+  setActiveFilter: (value: Filters) => void;
 }
 const Filter = ({ activeFilter, setActiveFilter }: FilterProps) => {
-  const toggleFilter = (value: string) => {
+  const toggleFilter = (value: Filters) => {
     setActiveFilter(value);
     playSound("positive");
   };

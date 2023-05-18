@@ -1,9 +1,16 @@
+@use "consts";
+
 .todolist {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 20rem);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 20rem));
   gap: 2rem;
-  padding: 2rem;
+    padding: 2rem 0.75rem;
+
+  @include consts.sm {
+
+    padding: 2rem;
+  }
 }
 
 .task {
@@ -14,30 +21,28 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 0.5rem;
-}
-.task .content {
-  min-height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-.task .info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.task .button-wrapper {
-  display: flex; 
-  justify-self: end;
-}
-.task button {
+  .content {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .button-wrapper {
+    display: flex; 
+  }
+  button {
   height: 2rem;
   width: 2rem;
   display: flex;
   align-items: center;
-}
-.task button.disabled {
+}button.disabled {
   visibility: hidden;
+}
 }

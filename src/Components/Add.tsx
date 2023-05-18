@@ -4,7 +4,6 @@ import { playSound } from "../utils/playSound";
 
 interface AddProps {
   todoList: ITask[];
-  //  setTodoList: React.Dispatch<React.SetStateAction<ITask[]>>;
   setTodoList: (argument: ITask[] | ((prevList: ITask[]) => ITask[])) => void;
 }
 const Add: React.FC<AddProps> = ({ setTodoList, todoList }) => {
@@ -14,8 +13,6 @@ const Add: React.FC<AddProps> = ({ setTodoList, todoList }) => {
     taskId: 0,
   };
   const [newTask, setNewTask] = useState<ITask>(emptyTask);
-  // const [playing, toggle] = useAudio("positive");
-  // const playPositive = useAudio("positive");
 
   const updateNewTask = (
     event: React.ChangeEvent<HTMLInputElement>,
