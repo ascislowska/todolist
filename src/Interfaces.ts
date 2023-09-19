@@ -6,3 +6,4 @@ export interface ITask {
 }
 export type Filters = "todo" | "done" | "all";
 export type Sounds = "positive" | "negative";
+export type Themes = "light" | "dark";

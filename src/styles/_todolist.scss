@@ -14,9 +14,9 @@
 }
 
 .task {
-  background: #eef0f4;
+  // background: #eef0f4;
   border-radius: 15px;
-  @include consts.not-pressed;
+  // @include consts.not-pressed;
   // box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
   display: flex;
   justify-content: space-between;
@@ -41,6 +41,7 @@
   button {
   height: 2rem;
   width: 2rem;
+  margin: 0.3rem;
   display: flex;
   align-items: center;
 }button.disabled {

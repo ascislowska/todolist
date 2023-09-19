@@ -5,35 +5,17 @@ button {
   border: none;
   border-radius: 100%;
   padding-left: 10px;
-  background: linear-gradient(145deg, #ffffff, #c1c3c6);
-  border-radius: 100%;
-  @include c.not-pressed;
   font-weight: 800;
- &.active {
-  background: #eef0f4;
-  border-radius: 100%;
-  @include c.pressed;
-}
-&.clicked {
-  background: #eef0f4;
-  border-radius: 100%;
-  @include c.pressed;
-
-} 
 &.disabled {
-  @extend.active;
-    color: rgb(140, 140, 140);
-  background: #bcbdc0;
   &:hover{
     cursor: not-allowed;
   }
 }
 }
 
-
 @media (hover: hover) {
   button:not(.disabled):hover {
     @include c.pressed;
-      cursor: pointer
+      cursor: pointer;
   }
 }

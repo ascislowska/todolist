@@ -1,0 +1,65 @@
+$white: #ffffffff;
+$color-light:  #eef0f4;
+$color-medium: #87898c;
+$color-dark: #37383c;
+
+
+$light: (
+       bg: $color-light,
+       text-color: $color-medium,
+              button-light: $white,
+       button-shadow: #dcdddf,
+
+      //  button-shadow: #c1c3c6,
+       btn-outer-shadow: 9.91px 9.91px 15px  #d9dade,
+      btn-outer-shadow-negative:  -9.91px -9.91px 15px $white,
+      btn-dissabled-color: $color-medium,
+      btn-dissabled-background: #bcbdc0,
+
+       );
+
+
+$dark: (
+  bg: $color-dark,
+  text-color: $color-light,
+  button-light: #87898c,
+  button-shadow: #1c1d20,
+    btn-outer-shadow: 9.91px 9.91px 15px  #26272a,
+    btn-outer-shadow-negative:  -9.91px -9.91px 15px #343538,
+    btn-dissabled-color: $color-medium,
+    btn-dissabled-background: #58595d,
+
+);
+
+
+@mixin themable($theme-name, $theme-map) {
+  &.#{$theme-name} {
+    background-color:map-get($theme-map, bg);
+    color: map-get($theme-map, text-color);
+    &, & * {transition: all 0.3s ease-in-out;}
+    // & * {
+    //   background-color: map-get($theme-map, bg);
+    // }
+    & input, & label {
+      background-color: map-get($theme-map, bg);
+      box-shadow:  inset map-get($theme-map, btn-outer-shadow ), inset map-get($theme-map, btn-outer-shadow-negative );
+
+    }
+    & button, & label::after, .task {
+      background: linear-gradient(145deg, map-get($theme-map, button-light), map-get($theme-map, button-shadow));
+      box-shadow:  map-get($theme-map, btn-outer-shadow ), map-get($theme-map, btn-outer-shadow-negative );
+}
+
+    & button {
+        &.clicked,  &.active, &:not(.disabled):hover{
+          box-shadow:  inset map-get($theme-map, btn-outer-shadow ), inset map-get($theme-map, btn-outer-shadow-negative );
+        }
+        &.disabled {
+          @extend .active;
+          color:map-get($theme-map, btn-dissabled-color );
+          background: map-get($theme-map, btn-dissabled-background );
+
+        }
+    }
+  }
+}

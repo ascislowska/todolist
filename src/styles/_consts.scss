@@ -2,6 +2,7 @@ $btn-background: #eef0f4;
 /** Shadows **/
 $shadow: 9.91px 9.91px 15px #d9dade;
 $negative-shadow: -9.91px -9.91px 15px #ffffff;
+
 @mixin pressed {
       box-shadow: inset $shadow,
     inset $negative-shadow;
@@ -51,6 +52,3 @@ $screen-xl-min: 1200px;
    }
 }
 
-@mixin blue {
-    background-color: aquamarine;
-}
