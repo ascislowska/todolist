@@ -1,4 +1,4 @@
-import { useState, FC } from "react";
+import { useState, useEffect, FC } from "react";
 import { Filters, ITask, Themes } from "./Interfaces";
 import TodoList from "./Components/TodoList";
 import Add from "./Components/Add";
@@ -8,9 +8,15 @@ import { ThemeContext } from "./contexts/theme-context";
 import ThemeBtn from "./Components/ThemeBtn";
 
 const App: FC = () => {
-  const [todoList, setTodoList] = useState<ITask[]>([]);
+  const [todoList, setTodoList] = useState<ITask[]>(
+    localStorage.todos ? JSON.parse(localStorage.todos) : []
+  );
   const [activeFilter, setActiveFilter] = useState<Filters>("todo");
   const [theme, setTheme] = useState<Themes>("light");
+
+  useEffect(() => {
+    return localStorage.setItem("todos", JSON.stringify(todoList));
+  }, [todoList]);
 
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
