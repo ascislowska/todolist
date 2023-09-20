@@ -10,7 +10,7 @@ const Add: React.FC<AddProps> = ({ setTodoList, todoList }) => {
   const emptyTask = {
     taskName: "",
     done: false,
-    taskId: 0,
+    taskId: "0",
   };
   const [newTask, setNewTask] = useState<ITask>(emptyTask);
 
@@ -29,8 +29,8 @@ const Add: React.FC<AddProps> = ({ setTodoList, todoList }) => {
           ...newTask,
           taskId:
             todoList.length === 0
-              ? 1
-              : todoList[todoList.length - 1].taskId + 1,
+              ? "1"
+              : Number(todoList[todoList.length - 1].taskId) + 1 + "",
         },
       ]);
       setNewTask(emptyTask);

@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Draggable } from "react-beautiful-dnd";
 import { ITask } from "../Interfaces";
 import { BsCheckLg, BsXLg } from "react-icons/bs";
 import { playSound } from "../utils/playSound";
+import { TodoListContext } from "../contexts/todoList-context";
 interface TaskProps {
   task: ITask;
+  // todoList: ITask[];
+  // setTodoList: React.Dispatch<React.SetStateAction<ITask[]>>;
   index: number;
-  todoList: ITask[];
-  setTodoList: React.Dispatch<React.SetStateAction<ITask[]>>;
 }
-const Task = ({ task, index, todoList, setTodoList }: TaskProps) => {
+// const Task = ({ task, todoList, setTodoList, index }: TaskProps) => {
+const Task = ({ task, index }: TaskProps) => {
+  const { todoList, setTodoList } = useContext(TodoListContext);
   const completeTask = () => {
     playSound("positive");
     setTodoList(
@@ -24,7 +28,15 @@ const Task = ({ task, index, todoList, setTodoList }: TaskProps) => {
   };
 
   return (
-    <div className="task">
+    // <Draggable draggableId={task.taskId} index={index}>
+    //   {(provided) => (
+    <div
+      // ref={provided.innerRef}
+      id={`task-${task.taskId}`}
+      className="task"
+      // {...provided.draggableProps}
+      // {...provided.draggableProps}
+    >
       <p className="content">{task.taskName}</p>
       <div className="info">
         <p>{task.deadline}</p>
@@ -38,6 +50,8 @@ const Task = ({ task, index, todoList, setTodoList }: TaskProps) => {
         </div>
       </div>
     </div>
+    // )}
+    // </Draggable>
   );
 };
 
