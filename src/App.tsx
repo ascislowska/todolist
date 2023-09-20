@@ -15,14 +15,20 @@ const App: FC = () => {
   );
 
   const [activeFilter, setActiveFilter] = useState<Filters>("todo");
-  const [theme, setTheme] = useState<Themes>(localStorage.theme);
-
+  const [theme, setTheme] = useState<Themes>(localStorage.theme || "light");
   useEffect(() => {
-    return () => {
-      localStorage.setItem("todos", JSON.stringify(todoList));
-      localStorage.setItem("theme", theme);
-    };
-  }, [todoList]);
+    console.log(theme);
+  }, [theme]);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todoList));
+    localStorage.setItem("theme", theme);
+    // return () => {
+    //   console.log("umnomounting with theme...", theme);
+
+    //   localStorage.setItem("todos", JSON.stringify(todoList));
+    //   localStorage.setItem("theme", theme);
+    // };
+  }, [todoList, theme]);
 
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
